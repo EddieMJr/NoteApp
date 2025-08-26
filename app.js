@@ -1,8 +1,7 @@
 const yargs = require('yargs')
 const { hideBin } = require('yargs/helpers')
 const notes = require('./notes.js')
-const chalk = require('chalk')
-
+const chalk = require('chalk');
 
 // using one yargs for all the commands and version customization
 yargs(hideBin(process.argv))
