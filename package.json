@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/EddieMJr/NoteApp#readme",
   "dependencies": {
-    "chalk": "^5.6.0",
+    "chalk": "4.1",
     "nodemon": "^3.1.10",
     "validator": "^13.15.15",
     "yargs": "^18.0.0-candidate.7"
