@@ -5,10 +5,12 @@ const getNotes = () => {
     return 'Your notes...'
 }
 
+// allows user to add notes to notes.json
 const addNote = (title, body) => {
     const notes = loadNotes()
     const duplicateNote = notes.find((note) => note.title === title)
 
+    // if there isnt a duplicate note, add the note and show user its been added
     if (!duplicateNote) {
         notes.push({
             title: title,
@@ -16,12 +18,13 @@ const addNote = (title, body) => {
         })
         saveNotes(notes)
         console.log(chalk.green.underline('new note added!'))
+        // if there is, tell user it is already in the notes.json
     } else {
         console.log(chalk.red.underline('note title taken!'))
     }
 }
 
-
+// allows user to remove notes to notes.json
 const removeNote = (title) => {
     const notes = loadNotes()
     const notesToKeep = notes.filter((note) => note.title !== title)
@@ -49,6 +52,7 @@ const loadNotes = () => {
     }
 }
 
+// shows user all of the titles of the notes she has
 const listNotes = () => {
     const notes = loadNotes()
 
@@ -59,6 +63,7 @@ const listNotes = () => {
     })
 }
 
+// allows user to read one note from notes.json
 const readNote = (title) => {
     const notes = loadNotes()
     const note = notes.find((note) => note.title === title)
